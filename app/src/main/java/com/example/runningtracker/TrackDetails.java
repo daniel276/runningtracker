@@ -53,11 +53,11 @@ public class TrackDetails extends AppCompatActivity {
         commentField = findViewById(R.id.commentField);
         ratingBar = findViewById(R.id.ratingBar);
 
-        dbHelper = new DBHelper(this);
-        db = dbHelper.getWritableDatabase();
+        dbHelper = new DBHelper(this.getContext());
+
 
         String logID = String.valueOf(RECIPE_ID);
-        String selectClause = LogProviderContract.ID + " = ?";
+        String selectClause = LogProviderContract.ID + ' = ?";
         String[] selectArgs = { logID };
 
         String name = nameField.getText().toString();
